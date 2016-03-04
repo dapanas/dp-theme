@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php bloginfo('description'); ?></title>
         <link rel="stylesheet" href="<?php bloginfo(stylesheet_url); ?>">
         <!-- Latest compiled and minified CSS -->
@@ -39,5 +40,31 @@
             <!-- no posts found -->
             <?php endif; ?>
         </section>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/gyro.js"></script>
+        <script>
+        var works = false;
+        gyro.frequency = 200;
+
+        setTimeout(function() {
+            if (!works) {
+                gyro.stopTracking();
+            }
+        }, 2000);
+
+        gyro.startTracking(function(o) {
+            console.log(o);
+            if (o.gamma != null) {
+                works = true;
+            }
+            
+            var articles = document.querySelectorAll("article");
+            var text = "rotateZ("+ (-o.gamma / 10) +"deg)";
+            
+            for (i = 0; i < articles.length; i++) {
+                articles[i].style.transform = text;
+            }
+        });
+        </script>
+        </script>
     </body>
 </html>
