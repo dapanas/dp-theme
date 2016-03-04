@@ -9,30 +9,29 @@ Version: 1.0
 
 /* ANIMATIONS */
 @keyframes changeColor {
-    from {background-color: white;}
-    to {background-color: gainsboro;}
+  from {background-color: white;}
+  to {background-color: gainsboro;}
 }
 
 /* CUSTOM CLASSES */
 article.the_post {
-    border: solid 1px black;
-    padding: 0 20px;
-    margin: 20px;
+  border: solid 1px black;
+  padding: 0 20px;
+  margin: 20px;
 }
 
 article.the_post:hover {
-    animation-name: changeColor;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    transform: rotateZ(0.5deg);
-    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.75);
+  animation-name: changeColor;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: rotateZ(0.5deg);
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.75);
 }
 
 div.the_content {
-    margin: 10px 0 0 30px;
+  margin: 10px 0 0 30px;
 }
 
 footer.the_static_footer {
-    text-align: right;
+  text-align: right;
 }
-
